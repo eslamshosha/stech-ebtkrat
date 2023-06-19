@@ -953,6 +953,9 @@ html[dir="rtl"] .services-list li::before {
     min-height: auto;
     margin-bottom: 25px;
   }
+  .services-title h3{
+    font-size: 32px;
+  }
 }
 /* services-section */
 /*                      work-section                      */
