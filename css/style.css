@@ -1871,7 +1871,7 @@ select {
 /*                                 arrow-top                           */
 .arrow-top {
   position: fixed;
-  bottom: 75px;
+  bottom: 145px;
   inset-inline-start: 20px;
   display: none;
   z-index: 10;
@@ -1908,7 +1908,14 @@ select {
   z-index: 10;
   text-decoration: none !important;
 }
-
+.fixed-call {
+  position: fixed;
+  bottom: 75px;
+  inset-inline-start: 10px;
+  z-index: 10;
+  text-decoration: none !important;
+}
+.fixed-call .tooltiptext,
 .fixed-what .tooltiptext {
   visibility: hidden;
   opacity: 0;
@@ -1929,7 +1936,7 @@ select {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
+.fixed-call .tooltiptext::after,
 .fixed-what .tooltiptext::after {
   content: " ";
   position: absolute;
@@ -1940,16 +1947,16 @@ select {
   border-style: solid;
   border-color: transparent transparent transparent rgb(255, 255, 255);
 }
-
+html[dir="ltr"] .fixed-call .tooltiptext::after,
 html[dir="ltr"] .fixed-what .tooltiptext::after {
   transform: scaleX(-1);
 }
-
+.fixed-call:hover .tooltiptext,
 .fixed-what:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
-
+.fixed-call i,
 .fixed-what i {
   width: 60px;
   height: 60px;
@@ -1958,19 +1965,22 @@ html[dir="ltr"] .fixed-what .tooltiptext::after {
   justify-content: center;
   border-radius: 50%;
   background-color: #4dc247;
-  font-size: 42px;
+  font-size: 40px;
   color: var(--white-color);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-
+.fixed-call i {
+  background-color: var(--main-color);
+}
+.fixed-call i:hover,
 .fixed-what i:hover {
   background-color: var(--main-hover);
 }
 
 @media (max-width: 767px) {
   .arrow-top {
-    bottom: 65px;
+    bottom: 125px;
     inset-inline-start: 14px;
   }
 
@@ -1979,7 +1989,10 @@ html[dir="ltr"] .fixed-what .tooltiptext::after {
     bottom: 10px;
     inset-inline-start: 10px;
   }
-
+  .fixed-call {
+    bottom: 70px;
+  }
+  .fixed-call i,
   .fixed-what i {
     width: 50px;
     height: 50px;
